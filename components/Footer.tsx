@@ -9,20 +9,18 @@ export default function Footer() {
             <p className="text-sm leading-relaxed">ハンドメイド作家1,000名以上の指導実績をもとに、minneやCreemaで本当に売れるノウハウを発信します。</p>
           </div>
           <div>
-            <p className="text-white font-bold text-sm mb-3">AIツール</p>
+            <p className="text-white font-bold text-sm mb-3">カテゴリ</p>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/tools/price-calculator" className="hover:text-white transition-colors">適正価格計算AI</Link></li>
-              <li><Link href="/tools/title-generator" className="hover:text-white transition-colors">タイトル生成AI</Link></li>
-              <li><Link href="/tools/description-writer" className="hover:text-white transition-colors">説明文ライターAI</Link></li>
+              <li><Link href="/articles?cat=minne" className="hover:text-white transition-colors">minne攻略</Link></li>
+              <li><Link href="/articles?cat=creema" className="hover:text-white transition-colors">Creema攻略</Link></li>
+              <li><Link href="/articles?cat=pricing" className="hover:text-white transition-colors">価格設定</Link></li>
+              <li><Link href="/articles?cat=sns" className="hover:text-white transition-colors">SNS集客</Link></li>
+              <li><Link href="/articles?cat=income" className="hover:text-white transition-colors">収入・税金</Link></li>
             </ul>
           </div>
           <div>
-            <p className="text-white font-bold text-sm mb-3">カテゴリ</p>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/articles?cat=pricing" className="hover:text-white transition-colors">価格設定</Link></li>
-              <li><Link href="/articles?cat=minne" className="hover:text-white transition-colors">minne攻略</Link></li>
-              <li><Link href="/articles?cat=sns" className="hover:text-white transition-colors">SNS集客</Link></li>
-            </ul>
+            <p className="text-white font-bold text-sm mb-3">このサイトについて</p>
+            <p className="text-sm leading-relaxed">ハンドメイド作家として10年以上活動し、1,000名以上を指導してきた実体験をもとに書いています。</p>
           </div>
         </div>
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
