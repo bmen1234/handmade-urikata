@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn-primary { @apply inline-flex items-center gap-2 bg-brand-green text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-green-dark transition-colors; }
+  .btn-secondary { @apply inline-flex items-center gap-2 border-2 border-brand-green text-brand-green font-bold px-6 py-3 rounded-lg hover:bg-brand-green-light transition-colors; }
+  .section-label { @apply text-xs font-bold tracking-widest uppercase text-brand-green; }
+  .card { @apply bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow; }
+}
