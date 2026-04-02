@@ -5,9 +5,15 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          green: '#1D9E75',
-          'green-dark': '#0F6E56',
-          'green-light': '#E1F5EE',
+          // Primary navy (replaces green — all existing class refs auto-update)
+          green: '#1A2744',
+          'green-dark': '#0D1830',
+          'green-light': '#EEF1F8',
+          // Gold accent
+          gold: '#C49A3C',
+          'gold-dark': '#9E7820',
+          'gold-light': '#FBF6EA',
+          'gold-mid': '#E8D49A',
         },
       },
       fontFamily: {

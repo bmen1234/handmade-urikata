@@ -1,42 +1,40 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { articles } from '@/lib/articles'
+import ConsultingCTA from '@/components/ConsultingCTA'
 
 export const metadata: Metadata = {
-  title: '売り方ラボ | minne・Creemaで売れるハンドメイド販売ノウハウ',
-  description: 'minne・Creemaで売れるためのノウハウを徹底解説。価格設定・写真撮影・SNS集客・ブランディングまで、ハンドメイド作家のための実践的な情報を発信します。',
+  title: '売り方ラボ | minne・Creemaで売れるハンドメイド戦略メディア',
+  description: 'ハンドメイド作家の売上を最大化するための戦略メディア。価格設定・SEO・SNS集客・ブランディングを実践データで徹底解説。無料コンサルティング相談受付中。',
   alternates: { canonical: 'https://urikata.jp' },
 }
 
-const faqSchema = {
+const siteSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "ハンドメイド作品が売れない理由は何ですか？",
-      acceptedAnswer: { "@type": "Answer", text: "ハンドメイド作品が売れない主な理由は、価格設定が適切でない、商品タイトルにキーワードが入っていない、写真のクオリティが低い、プロフィールが薄いの4つです。まずタイトルと写真を見直すことで改善するケースが多いです。" },
-    },
-    {
-      "@type": "Question",
-      name: "minneとCreemaどちらで販売すべきですか？",
-      acceptedAnswer: { "@type": "Answer", text: "minneは登録作家数・ユーザー数ともに日本最大で、初心者の集客がしやすい特徴があります。Creemaは客単価が高く、こだわりのクリエイター向けです。最初はminneで販売を開始し、軌道に乗ったらCreemaにも展開する戦略が効果的です。" },
-    },
-    {
-      "@type": "Question",
-      name: "ハンドメイド作品の適正価格はどうやって決めますか？",
-      acceptedAnswer: { "@type": "Answer", text: "適正価格は材料費だけでなく、制作時間×時給、梱包費、プラットフォーム手数料を含めて計算します。多くの作家が価格を安く設定しすぎており、値上げしても売上が下がらないケースが大半です。" },
-    },
-  ],
+  "@type": "WebSite",
+  name: "売り方ラボ",
+  url: "https://urikata.jp",
+  description: "ハンドメイド作家のための販売戦略コンサルメディア",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://urikata.jp/articles?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 }
 
 const categories = [
-  { slug: "価格設定", label: "価格設定", emoji: "💴", desc: "売れる値付けの方法論" },
-  { slug: "minne攻略", label: "minne攻略", emoji: "🛍️", desc: "タイトル・写真・SEO対策" },
-  { slug: "Creema攻略", label: "Creema攻略", emoji: "🎨", desc: "高単価で売るための戦略" },
-  { slug: "SNS集客", label: "SNS集客", emoji: "📱", desc: "Instagram・X・Threads活用法" },
-  { slug: "ブランディング", label: "ブランディング", emoji: "⭐", desc: "世界観・ファンの作り方" },
-  { slug: "収入・税金", label: "収入・税金", emoji: "📊", desc: "稼ぐ仕組みと確定申告" },
+  { slug: "価格設定", label: "価格設定戦略", emoji: "💴", desc: "原価・時給・手数料から逆算する正しい値付け" },
+  { slug: "minne攻略", label: "minne SEO", emoji: "🔍", desc: "タイトル・タグ・検索順位を制する方法" },
+  { slug: "Creema攻略", label: "Creema高単価化", emoji: "💎", desc: "5,000円以上の作品を売るための7条件" },
+  { slug: "SNS集客", label: "SNS集客設計", emoji: "📊", desc: "フォロワーを売上に直結させる投稿設計" },
+  { slug: "ブランディング", label: "ブランド戦略", emoji: "⭐", desc: "ファン・リピーターを生む世界観の作り方" },
+  { slug: "収入・税金", label: "収益化・税務", emoji: "📋", desc: "月10万・専業への道と確定申告完全対応" },
+]
+
+const stats = [
+  { num: `${articles.length}本+`, label: "実践ノウハウ記事" },
+  { num: "10年+", label: "販売戦略の研究" },
+  { num: "6カテゴリ", label: "体系的な知識体系" },
 ]
 
 export default function HomePage() {
@@ -46,112 +44,119 @@ export default function HomePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
 
-      {/* Hero */}
-      <section className="border-b border-gray-100 py-10 px-4">
+      {/* ── Hero ── */}
+      <section className="bg-brand-green text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="section-label mb-3">ハンドメイド販売の売り方メディア</p>
-              <h1 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-5">
-                minneとCreemaで<br />
-                <span className="text-brand-green">本当に売れる</span>方法を<br />
-                すべて公開します
+              <p className="text-xs font-bold tracking-widest uppercase text-brand-gold mb-4">
+                ハンドメイド販売戦略メディア
+              </p>
+              <h1 className="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-6 text-white">
+                「作れるけど売れない」を<br />
+                <span className="text-brand-gold">データと戦略</span>で突破する
               </h1>
-              <p className="text-gray-500 leading-relaxed mb-7 text-[16px]">
-                価格設定・商品タイトル・写真撮影・SNS集客・ブランディングまで。実際に効果のあったノウハウを徹底解説します。
+              <p className="text-blue-100 leading-relaxed mb-8 text-[16px]">
+                価格設定・SEO・SNS集客・ブランディングを体系化。minne・Creemaで実際に売上が上がったノウハウだけを発信します。
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/articles" className="btn-primary text-[15px] px-6 py-3">記事を読む →</Link>
-                <Link href="/articles?cat=minne攻略" className="btn-secondary text-[15px] px-6 py-3">minne攻略を見る</Link>
+                <Link href="/articles" className="btn-gold text-[15px] px-6 py-3">戦略記事を読む →</Link>
+                <a href="mailto:contact@urikata.jp?subject=無料相談希望"
+                  className="inline-flex items-center gap-2 border border-white/40 text-white font-bold px-6 py-3 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors text-[15px]">
+                  無料相談を申し込む
+                </a>
               </div>
             </div>
+
             {featured && (
               <Link href={`/articles/${featured.slug}`} className="group block">
-                <div className="aspect-[16/9] bg-gradient-to-br from-brand-green-light to-white rounded-2xl flex items-center justify-center mb-4 overflow-hidden relative">
+                <div className="aspect-[16/9] bg-white/5 border border-white/20 rounded flex items-center justify-center mb-4 overflow-hidden relative">
                   <span className="text-7xl">{featured.emoji}</span>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  <span className="absolute bottom-4 left-4 tag">{featured.category}</span>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-green-dark/80 to-transparent p-4">
+                    <span className="tag text-xs">{featured.category}</span>
+                    <p className="text-white font-bold text-sm mt-1 line-clamp-2 group-hover:text-brand-gold transition-colors leading-snug">
+                      {featured.title}
+                    </p>
+                  </div>
                 </div>
-                <h2 className="font-bold text-gray-900 text-lg leading-snug group-hover:text-brand-green transition-colors line-clamp-2">{featured.title}</h2>
-                <p className="text-sm text-gray-400 mt-1.5">{featured.date}</p>
               </Link>
             )}
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-gray-900 py-5 px-4">
+      {/* ── Stats bar ── */}
+      <section className="bg-brand-green-dark py-4 px-4 border-b border-white/10">
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-8 sm:gap-16">
-          {[
-            { num: `${articles.length}本+`, label: "実践的なノウハウ記事" },
-            { num: "10年+", label: "ハンドメイド販売の研究" },
-            { num: "毎週更新", label: "実践ベースの記事" },
-          ].map(s => (
+          {stats.map(s => (
             <div key={s.label} className="text-center">
-              <p className="text-brand-green font-black text-2xl sm:text-3xl">{s.num}</p>
+              <p className="text-brand-gold font-black text-2xl font-serif">{s.num}</p>
               <p className="text-gray-400 text-xs mt-0.5">{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Latest */}
+      {/* ── Latest ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="flex items-baseline justify-between mb-8">
           <div>
             <p className="section-label mb-1">最新記事</p>
-            <h2 className="font-serif text-2xl font-bold text-gray-900">新着ノウハウ</h2>
+            <h2 className="font-serif text-2xl font-bold text-brand-green">新着戦略ノウハウ</h2>
           </div>
-          <Link href="/articles" className="text-sm text-brand-green font-bold hover:text-brand-green-dark transition-colors">すべて見る →</Link>
+          <Link href="/articles" className="text-sm text-brand-gold font-bold hover:text-brand-gold-dark transition-colors">
+            すべて見る →
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {latest.map(a => (
             <Link key={a.slug} href={`/articles/${a.slug}`} className="group block">
-              <div className="aspect-[16/9] bg-gradient-to-br from-gray-50 to-brand-green-light rounded-xl flex items-center justify-center mb-3">
+              <div className="aspect-[16/9] bg-brand-green-light rounded flex items-center justify-center mb-3 border border-gray-100 group-hover:border-brand-gold transition-colors overflow-hidden">
                 <span className="text-5xl">{a.emoji}</span>
               </div>
               <span className="tag">{a.category}</span>
-              <h3 className="font-bold text-gray-900 mt-2 text-[15px] leading-snug group-hover:text-brand-green transition-colors line-clamp-2">{a.title}</h3>
+              <h3 className="font-bold text-gray-900 mt-2 text-[15px] leading-snug group-hover:text-brand-green transition-colors line-clamp-2">
+                {a.title}
+              </h3>
               <p className="text-xs text-gray-400 mt-1.5">{a.date}</p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="bg-gray-50 py-16 px-4">
+      {/* ── Categories ── */}
+      <section className="bg-brand-green-light border-y border-gray-200 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <p className="section-label mb-2">カテゴリから探す</p>
-            <h2 className="font-serif text-2xl font-bold text-gray-900">あなたの悩みを解決する</h2>
+            <p className="section-label mb-2">カテゴリ別戦略</p>
+            <h2 className="font-serif text-2xl font-bold text-brand-green">課題から逆引きする</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {categories.map(c => (
               <Link key={c.slug} href={`/articles?cat=${encodeURIComponent(c.slug)}`}
-                className="bg-white border border-gray-100 rounded-xl p-5 hover:border-brand-green hover:shadow-md transition-all group">
-                <p className="text-3xl mb-3">{c.emoji}</p>
-                <p className="font-bold text-gray-900 group-hover:text-brand-green transition-colors text-[15px]">{c.label}</p>
-                <p className="text-xs text-gray-400 mt-1 leading-relaxed">{c.desc}</p>
+                className="bg-white border border-gray-200 rounded p-5 hover:border-brand-gold hover:shadow-md transition-all group">
+                <p className="text-2xl mb-3">{c.emoji}</p>
+                <p className="font-bold text-brand-green group-hover:text-brand-gold transition-colors text-[15px]">{c.label}</p>
+                <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">{c.desc}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Picks */}
+      {/* ── Picks ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <div className="mb-8">
           <p className="section-label mb-1">注目記事</p>
-          <h2 className="font-serif text-2xl font-bold text-gray-900">売上が上がるノウハウ</h2>
+          <h2 className="font-serif text-2xl font-bold text-brand-green">実績のある戦略ノウハウ</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {picks.map(a => (
             <Link key={a.slug} href={`/articles/${a.slug}`}
-              className="group flex gap-4 items-start border border-gray-100 rounded-xl p-5 hover:border-brand-green hover:shadow-sm transition-all">
-              <div className="w-16 h-16 bg-brand-green-light rounded-xl flex-shrink-0 flex items-center justify-center text-2xl">{a.emoji}</div>
+              className="group flex gap-4 items-start border border-gray-200 rounded p-5 hover:border-brand-gold transition-all">
+              <div className="w-14 h-14 bg-brand-green-light rounded flex-shrink-0 flex items-center justify-center text-2xl border border-gray-100">{a.emoji}</div>
               <div className="flex-1 min-w-0">
                 <span className="tag">{a.category}</span>
                 <h3 className="font-bold text-gray-900 mt-1.5 text-sm leading-snug group-hover:text-brand-green transition-colors line-clamp-2">{a.title}</h3>
@@ -162,25 +167,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-gray-50 py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="section-label mb-2">よくある質問</p>
-            <h2 className="font-serif text-2xl font-bold text-gray-900">ハンドメイド販売のよくある疑問</h2>
-          </div>
-          <div className="space-y-3">
-            {faqSchema.mainEntity.map((faq, i) => (
-              <details key={i} className="bg-white border border-gray-100 rounded-xl px-6 py-5 group">
-                <summary className="font-bold text-gray-900 cursor-pointer list-none flex justify-between items-center gap-4 text-[15px]">
-                  <span>{faq.name}</span>
-                  <span className="text-brand-green text-xl flex-shrink-0 group-open:rotate-45 transition-transform origin-center">+</span>
-                </summary>
-                <p className="text-gray-600 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">{faq.acceptedAnswer.text}</p>
-              </details>
-            ))}
-          </div>
-        </div>
+      {/* ── Consulting CTA ── */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+        <ConsultingCTA variant="footer" />
       </section>
     </>
   )

@@ -20,22 +20,23 @@ export default function ArticlesPage({ searchParams }: { searchParams: { cat?: s
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div className="mb-10">
+      <div className="mb-10 pb-8 border-b border-gray-200">
         <p className="section-label mb-2">記事一覧</p>
-        <h1 className="font-serif text-3xl font-bold text-gray-900">
-          {cat !== 'all' ? `${cat}の記事` : 'ハンドメイド販売ノウハウ'}
+        <h1 className="font-serif text-3xl font-bold text-brand-green">
+          {cat !== 'all' ? `${cat}の戦略記事` : 'ハンドメイド販売戦略ノウハウ'}
         </h1>
-        <p className="text-gray-500 mt-2 text-[15px]">{list.length}本の記事</p>
+        <p className="text-gray-500 mt-2 text-[15px]">{list.length}本の実践記事</p>
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-8 pb-8 border-b border-gray-100">
+      {/* Category filter */}
+      <div className="flex flex-wrap gap-2 mb-10">
         {cats.map(c => (
           <Link key={c.slug}
             href={c.slug === 'all' ? '/articles' : `/articles?cat=${encodeURIComponent(c.slug)}`}
-            className={`px-4 py-1.5 rounded-full text-sm font-bold transition-colors ${
+            className={`px-4 py-1.5 rounded-sm text-sm font-bold transition-colors border ${
               cat === c.slug
-                ? 'bg-brand-green text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-brand-green-light hover:text-brand-green'
+                ? 'bg-brand-green text-white border-brand-green'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-brand-gold hover:text-brand-green'
             }`}>
             {c.label}
           </Link>
