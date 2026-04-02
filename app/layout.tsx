@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: { default:'ハンドメイド売り方ラボ | minne・Creemaで売れるノウハウ', template:'%s | ハンドメイド売り方ラボ' },
   description:'ハンドメイド作家1,000名以上を指導した実績をもとに、minne・Creemaでの売り方・集客・価格設定を徹底解説。無料AIツールも使えます。',
   robots:{ index:true, follow:true, googleBot:{index:true,follow:true} },
+  verification:{ google:'EKj2bQ1Mq4DCcWu5PHiTnYdIy5S_MJDDFb5Gv9mAAR8' },
 }
 export default function RootLayout({children}:{children:React.ReactNode}) {
   return (
