@@ -1,9 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-[17px] leading-relaxed text-gray-900;
+  }
+}
+
 @layer components {
-  .btn-primary { @apply inline-flex items-center gap-2 bg-brand-green text-white font-bold px-6 py-3 rounded-lg hover:bg-brand-green-dark transition-colors; }
-  .btn-secondary { @apply inline-flex items-center gap-2 border-2 border-brand-green text-brand-green font-bold px-6 py-3 rounded-lg hover:bg-brand-green-light transition-colors; }
-  .section-label { @apply text-xs font-bold tracking-widest uppercase text-brand-green; }
-  .card { @apply bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow; }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-brand-green text-white font-bold px-5 py-2.5 rounded-md hover:bg-brand-green-dark transition-colors text-sm;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border border-gray-300 text-gray-700 font-bold px-5 py-2.5 rounded-md hover:border-brand-green hover:text-brand-green transition-colors text-sm;
+  }
+  .section-label {
+    @apply text-xs font-bold tracking-widest uppercase text-brand-green;
+  }
+  .card {
+    @apply bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-gray-200 transition-all;
+  }
+  .tag {
+    @apply inline-block text-xs font-bold text-brand-green bg-brand-green-light px-2.5 py-0.5 rounded-sm;
+  }
+
+  /* marked が生成する標準HTML向けスタイル */
+  .prose-article {
+    @apply text-[17px] text-gray-800 leading-[1.9];
+  }
+  .prose-article h1 {
+    display: none;
+  }
+  .prose-article h2 {
+    @apply text-xl sm:text-2xl font-bold text-gray-900 mt-14 mb-5 pb-3 border-b-2 border-brand-green-light;
+  }
+  .prose-article h3 {
+    @apply text-lg font-bold text-gray-900 mt-9 mb-3;
+  }
+  .prose-article h4 {
+    @apply text-base font-bold text-gray-800 mt-6 mb-2;
+  }
+  .prose-article p {
+    @apply mb-6 leading-[1.9] text-gray-800;
+  }
+  .prose-article ul {
+    @apply mb-6 space-y-2.5 pl-0 list-none;
+  }
+  .prose-article ol {
+    @apply mb-6 space-y-2.5 pl-0 list-none;
+    counter-reset: ol-counter;
+  }
+  .prose-article ul > li {
+    @apply flex items-start gap-2.5 text-gray-800;
+  }
+  .prose-article ul > li::before {
+    content: "▶";
+    @apply text-brand-green text-xs mt-1.5 flex-shrink-0;
+  }
+  .prose-article ol > li {
+    @apply flex items-start gap-3 text-gray-800;
+    counter-increment: ol-counter;
+  }
+  .prose-article ol > li::before {
+    content: counter(ol-counter);
+    @apply flex-shrink-0 w-6 h-6 bg-brand-green text-white text-xs font-bold rounded-full flex items-center justify-center mt-0.5;
+  }
+  .prose-article li > ul,
+  .prose-article li > ol {
+    @apply mt-2 mb-0;
+  }
+  .prose-article strong {
+    @apply font-bold text-gray-900;
+  }
+  .prose-article em {
+    @apply italic text-gray-700;
+  }
+  .prose-article code {
+    @apply bg-gray-100 text-brand-green px-1.5 py-0.5 rounded text-[14px] font-mono;
+  }
+  .prose-article pre {
+    @apply bg-gray-900 rounded-xl p-5 mb-6 overflow-x-auto;
+  }
+  .prose-article pre code {
+    @apply bg-transparent text-green-400 px-0 py-0 text-[14px];
+  }
+  .prose-article blockquote {
+    @apply border-l-4 border-brand-green pl-5 my-6 text-gray-600 italic;
+  }
+  .prose-article a {
+    @apply text-brand-green underline underline-offset-2 hover:text-brand-green-dark transition-colors;
+  }
+  .prose-article table {
+    @apply w-full mb-7 border-collapse text-sm;
+  }
+  .prose-article table th {
+    @apply bg-brand-green-light text-brand-green font-bold px-4 py-2.5 text-left border border-gray-200;
+  }
+  .prose-article table td {
+    @apply px-4 py-2.5 border border-gray-200 text-gray-700;
+  }
+  .prose-article table tr:nth-child(even) td {
+    @apply bg-gray-50;
+  }
+  .prose-article hr {
+    @apply my-10 border-gray-200;
+  }
+  .prose-article img {
+    @apply rounded-xl w-full mb-6;
+  }
 }

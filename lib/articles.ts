@@ -1,109 +1,74 @@
-export type Article = { slug:string; title:string; description:string; category:string; date:string; emoji:string; keywords:string[]; content:string }
-export const articles: Article[] = [
-  {slug:"minne-urenai-riyu",title:"minneで売れない7つの理由",description:"minneで作品が売れない原因を徹底解説。",category:"minne攻略",date:"2026年4月1日",emoji:"🛍️",keywords:["minne 売れない"],content:"物が良くても人間的に良くなかったら売れない時代。タイトルにキーワードを。価格は適正に。写真を明るく。プロフィールを充実させる。"},
-  {slug:"handmade-kakaku-settei",title:"ハンドメイドの価格設定完全ガイド",description:"原価の3倍は間違い。本当に売れる値付けの方法を解説。",category:"価格設定",date:"2026年4月1日",emoji:"💴",keywords:["ハンドメイド 価格設定"],content:"販売価格=(材料費+制作時間x時給)÷(1-手数料率)x利益率。minne10.56%、Creema22%。時給1200円以上。500円のピアスを2500円に値上げして売上3倍になった事例あり。"},
-  {slug:"minne-title-kakikata",title:"minneの商品タイトル書き方",description:"検索1位を狙えるテンプレート。",category:"minne攻略",date:"2026年4月1日",emoji:"✏️",keywords:["minne タイトル"],content:"素材+商品種別+特徴+ターゲットの構造。良い例：淡水パールピアス シンプル ゴールド 大人 上品 結婚式。前半30文字以内に重要キーワードを。"},
-  {slug:"creema-vs-minne",title:"Creemaとminneどちらがいいのか",description:"1000名指導してわかった正解。",category:"Creema攻略",date:"2026年4月1日",emoji:"🎨",keywords:["Creema minne 違い"],content:"最初はminne、売れてきたらCreemaも。minneは手数料10.56%で初心者向け。Creemaは手数料22%で高単価向け。"},
-  {slug:"handmade-sns-shukyaku",title:"ハンドメイド作家のInstagram集客",description:"フォロワー数と売上の相関関係。",category:"SNS集客",date:"2026年4月1日",emoji:"📱",keywords:["ハンドメイド Instagram 集客"],content:"フォロワー1000人未満と5000人以上で売上3〜5倍の差。投稿の8割は世界観づくりに使う。販売告知は2割以下。"},
-  {slug:"handmade-kakuteishinkoku",title:"ハンドメイド販売の確定申告",description:"20万円・48万円の基準とやり方。",category:"収入・税金",date:"2026年4月1日",emoji:"📊",keywords:["ハンドメイド 確定申告"],content:"会社員・パート：副業利益が年間20万円超。専業主婦・無職：年間利益が48万円超。青色申告で最大65万円の控除。"},
-  {slug:"handmade-ninkyoka-jidai",title:"2026年ハンドメイド販売の真実",description:"売れる作家と消える作家の違い。",category:"ブランディング",date:"2026年4月1日",emoji:"⭐",keywords:["ハンドメイド 二極化"],content:"二極化が極端に進んでいます。物が良くても人間的に良くなかったら売れない時代になった。消えていく作家はテクニックだけを追いかけている。"},
-  {slug:"handmade-repeat-kyaku",title:"ハンドメイドのリピーター作り方",description:"1回買った人を何度も来させる5つの仕組み。",category:"ブランディング",date:"2026年4月1日",emoji:"🔄",keywords:["ハンドメイド リピーター"],content:"新規客より既存客へのリピートの方が5倍効率的（1対5の法則）。梱包で感動を作る・フォローメッセージ・限定先行販売。"},
-  {slug:"handmade-shashin-satsuei",title:"ハンドメイド作品の写真撮影",description:"スマホで売れる写真を撮る7つのコツ。",category:"minne攻略",date:"2026年4月1日",emoji:"📸",keywords:["ハンドメイド 写真 撮り方"],content:"写真の改善だけで売上が2〜3倍になったケース多数。自然光・シンプルな背景・真上から撮る・着用写真・明るさ調整・正方形トリミング。"},
-  {slug:"handmade-profile-kakikata",title:"minneのプロフィール書き方",description:"買ってもらえる自己紹介の作り方。",category:"minne攻略",date:"2026年4月1日",emoji:"👤",keywords:["minne プロフィール 書き方"],content:"なぜこの作品を作るのか・こだわり・ターゲット・注文発送情報。最低200文字、理想400〜600文字。"},
-  {slug:"handmade-senmongika-jidai",title:"ハンドメイド作家が専業になるためのロードマップ",description:"月収20万円への道筋。",category:"収入・税金",date:"2026年4月2日",emoji:"🗺️",keywords:["ハンドメイド 専業 なるには"],content:"ステップ1：月3万円を安定させる。ステップ2：月10万円の仕組みを作る。ステップ3：月20万円へ（作品・キット・レッスン・コンテンツの組み合わせ）。"},
-  {slug:"handmade-kosodate-ryoritsu",title:"子育て中のハンドメイド作家が売上を上げる方法",description:"隙間時間で稼ぐ仕組み。",category:"ブランディング",date:"2026年4月2日",emoji:"👶",keywords:["ハンドメイド 子育て 両立"],content:"ラボメンバーの中で最も多いのが子育て中のお母さん。1.在庫を持つ設計 2.SNSは予約投稿 3.返答はテンプレート化。"},
-  {slug:"handmade-community-chikara",title:"ハンドメイド作家がコミュニティに入ると売上が伸びる理由",description:"ラボ200名以上のデータから解説。",category:"ブランディング",date:"2026年4月2日",emoji:"👥",keywords:["ハンドメイド コミュニティ"],content:"1on1の回数が多いメンバーほど売上が伸びている。改善のサイクルが速いから。コミュニティで得られるもの：客観的なフィードバック・成功事例・モチベーション。"},
-  {slug:"handmade-neraikata-target",title:"ハンドメイド販売のターゲット設定",description:"絞るほど売れる理由と具体的な方法。",category:"ブランディング",date:"2026年4月3日",emoji:"🎯",keywords:["ハンドメイド ターゲット設定"],content:"全員に向けた作品は誰にも刺さらない。ターゲットを絞るほどそのターゲットに深く刺さる。35歳・会社員・子ども2人・忙しいけど自分らしさを大切にしたいなど具体的に描く。"},
-  {slug:"handmade-minne-search-seo",title:"minneのSEO対策完全ガイド",description:"検索上位に表示されるための全技術。",category:"minne攻略",date:"2026年4月3日",emoji:"🔍",keywords:["minne SEO"],content:"1.タイトルに検索キーワード 2.タグを全て使い切る（最大13個）3.説明文にキーワード 4.週1回以上更新 5.お気に入りを増やす。"},
-  {slug:"handmade-brand-concept",title:"ハンドメイドのブランドコンセプトの作り方",description:"なんとなく作っているから脱却する。",category:"ブランディング",date:"2026年4月2日",emoji:"💡",keywords:["ハンドメイド ブランドコンセプト"],content:"コンセプト設計の3ステップ：1.誰に届けたいか 2.何を届けるか 3.なぜあなたが届けるのか。例：毎日忙しいお母さんが自分を大切にするための、さりげなく上質なアクセサリー。"},
-  {slug:"handmade-creema-takkatanka",title:"Creemaで高単価で売る方法",description:"5000円以上の作品を売るための7つの条件。",category:"Creema攻略",date:"2026年4月2日",emoji:"💎",keywords:["Creema 高単価"],content:"1.素材のこだわりが伝わる 2.制作プロセスをSNSで発信 3.写真のクオリティが高い 4.ショップ全体の世界観が統一 5.説明文が充実 6.レビューがある 7.作家のストーリーが伝わる。"},
-  {slug:"event-hanbai-vs-net",title:"ハンドメイドイベント販売とネット販売どちらがいい",description:"移行のタイミングと方法。",category:"minne攻略",date:"2026年4月2日",emoji:"🎪",keywords:["ハンドメイド イベント ネット販売"],content:"イベントで月3万円以上安定したらネット販売を始めるタイミング。出店費・交通費・体力消耗で思ったより手元に残らない。イベントで新規客獲得からSNSフォロー促進へ。"},
-  {slug:"handmade-influencer-katsuyou",title:"ハンドメイド作品をインフルエンサーに紹介してもらう方法",description:"広告費ゼロで集客。",category:"SNS集客",date:"2026年4月2日",emoji:"📣",keywords:["ハンドメイド インフルエンサー"],content:"1000〜5000フォロワーのプチインフルエンサーが効く。フォロワーとの信頼関係が濃く購買につながりやすい。DMで商品を試していただき率直なご感想をシェアしていただけますかと伝える。"},
-  {slug:"handmade-zairyo-shiire",title:"ハンドメイドの材料費を下げる仕入れ方法",description:"利益率を上げる5つの戦略。",category:"価格設定",date:"2026年4月2日",emoji:"🛒",keywords:["ハンドメイド 材料 仕入れ"],content:"同じ素材でも仕入れ先で価格が2〜3倍違う。オススメ：ユザワヤオンライン・AliExpress・NETSEA・問屋街（東京日暮里、大阪船場）。"},
-  {slug:"handmade-minne-okiniiri",title:"minneのお気に入り数を増やす方法",description:"検索上位に表示されるための戦略。",category:"minne攻略",date:"2026年4月3日",emoji:"❤️",keywords:["minne お気に入り 増やす"],content:"お気に入りを増やす方法：1.InstagramのプロフィールにminneのURL 2.投稿にminneへの誘導 3.新作公開時にSNSで告知 4.イベント出店時にminneをアピール。"},
-  {slug:"handmade-description-kakikata",title:"minne・Creemaの商品説明文の書き方",description:"売れる説明文テンプレート。",category:"minne攻略",date:"2026年4月3日",emoji:"📝",keywords:["minne 商品説明 書き方"],content:"構成：1.冒頭フック（世界観・ターゲット）2.作品の特徴 3.こんな方におすすめ 4.注意事項。説明文にも検索キーワードを自然に盛り込む。"},
-  {slug:"handmade-packaging",title:"ハンドメイド作品の梱包・ラッピング",description:"リピーターを生む梱包の作り方。",category:"ブランディング",date:"2026年4月3日",emoji:"📦",keywords:["ハンドメイド 梱包"],content:"梱包は第二の商品。素敵な梱包はSNSでシェアされ無料の宣伝になる。1.手書きのメッセージカード 2.ブランドの世界観に合った包装 3.次回購入のクーポン 4.SNSフォローのお願いカード。"},
-  {slug:"handmade-color-branding",title:"ハンドメイドブランドのカラー設定",description:"世界観を統一するブランドカラーの決め方。",category:"ブランディング",date:"2026年4月3日",emoji:"🎨",keywords:["ハンドメイド ブランドカラー"],content:"決め方：1.作品の雰囲気に合う色を選ぶ 2.メインカラー1色+サブカラー1〜2色に絞る 3.Instagram・梱包・プロフィール画像に統一。一度決めたら変えない。"},
-  {slug:"handmade-line-katsuyou",title:"ハンドメイド作家のLINE活用法",description:"リピーターを育てる最強ツール。",category:"SNS集客",date:"2026年4月3日",emoji:"💚",keywords:["ハンドメイド LINE"],content:"LINEの開封率は60〜70%。LINE登録者を増やす方法：1.購入者にメッセージカードで登録促進 2.Instagramのプロフィールにリンク 3.LINE限定情報を配信すると告知。"},
-  {slug:"handmade-note-katsuyou",title:"ハンドメイド作家のnote活用法",description:"ファンを育てるコンテンツ戦略。",category:"SNS集客",date:"2026年4月3日",emoji:"📓",keywords:["ハンドメイド note"],content:"noteに書くべき内容：1.作品に込めた思いとストーリー 2.素材選びのこだわり 3.制作過程で気づいたこと 4.ハンドメイド販売で学んだこと 5.お客様からの感想。"},
-  {slug:"handmade-x-twitter-katsuyou",title:"ハンドメイド作家のX（Twitter）活用法",description:"拡散力を使って一気に認知を広げる。",category:"SNS集客",date:"2026年4月4日",emoji:"🐦",keywords:["ハンドメイド X Twitter"],content:"Xで効果的な投稿：1.制作中の発見・気づき 2.完成品の写真 3.ハンドメイド販売のリアル 4.他の作家との交流。Instagram：写真・世界観　X：言葉・リアル・考え方で使い分ける。"},
-  {slug:"handmade-threads-katsuyou",title:"ハンドメイド作家のThreads活用法",description:"Instagramと連携して集客を倍増させる。",category:"SNS集客",date:"2026年4月4日",emoji:"🧵",keywords:["ハンドメイド Threads"],content:"ThreadsはInstagramユーザーへの最短ルート。Threadsに書くべき内容：制作の日常・ハンドメイド販売の本音・素材のこだわり。"},
-  {slug:"handmade-iichi-katsuyou",title:"iichi（イイチ）で売る方法",description:"minne・Creema以外の販売先を開拓する。",category:"Creema攻略",date:"2026年4月4日",emoji:"🏪",keywords:["iichi ハンドメイド"],content:"iichiは工芸・陶芸・木工・染物など伝統技法を使った作品に向いている。手数料20%。クリエイターの作品を深く理解して購入する層が多い。"},
-  {slug:"handmade-original-sekai",title:"ハンドメイド作家のオリジナリティの出し方",description:"似たような作品で差別化する。",category:"ブランディング",date:"2026年4月4日",emoji:"✨",keywords:["ハンドメイド オリジナリティ"],content:"本当のオリジナリティはあなたという人間から生まれる。3つの視点：1.素材の組み合わせ 2.ターゲットの絞り込み 3.ストーリー（なぜこれを作るのかを言語化する）。"},
-  {slug:"handmade-ofukai-strategy",title:"ハンドメイド作家がオフ会・イベントを活用して売上を伸ばす方法",description:"オフラインのつながりが売上に直結する。",category:"SNS集客",date:"2026年4月4日",emoji:"🎉",keywords:["ハンドメイド オフ会"],content:"オフ会に参加したメンバーは参加しなかったメンバーより売上の伸びが大きい。理由：1.リアルな成功事例を聞ける 2.モチベーションが上がる 3.コラボの機会が生まれる。大阪5月14日・東京5月21日開催予定。"},
-  {slug:"handmade-kit-hanbai",title:"ハンドメイドキット販売で収入を安定させる方法",description:"作品販売だけに依存しない収益化。",category:"収入・税金",date:"2026年4月4日",emoji:"📦",keywords:["ハンドメイド キット販売"],content:"キット販売は完成品とは競合しない。メリット：制作時間の大幅削減・子育て中でも収入維持・購入のハードルが下がる。作品販売で月3万円以上安定したらキット販売を追加するタイミング。"},
-  {slug:"handmade-lesson-kyoshitsu",title:"ハンドメイドレッスン・教室で収入を作る方法",description:"作家から先生へのステップアップ。",category:"収入・税金",date:"2026年4月4日",emoji:"🎓",keywords:["ハンドメイド レッスン"],content:"レッスンを始める3つの方法：1.オフラインの対面レッスン 2.オンラインレッスン（Zoom）3.動画コンテンツ販売（一度作れば繰り返し収益）。最初の生徒はSNSのフォロワーから。"},
-  {slug:"handmade-merumaga",title:"ハンドメイド作家のメルマガ活用法",description:"リピーターと安定売上を作る仕組み。",category:"SNS集客",date:"2026年4月5日",emoji:"📧",keywords:["ハンドメイド メルマガ"],content:"SNSのアルゴリズムに左右されない。開封率は20〜30%でSNSより高い。配信すべき内容：新作情報・制作の裏話・限定セール・イベント告知。購入者にメルマガ登録の案内を同梱する。"},
-  {slug:"handmade-tenpo-iinkai",title:"ハンドメイドの委託販売・レンタルボックスの始め方",description:"失敗しない店舗選びのコツ。",category:"minne攻略",date:"2026年4月5日",emoji:"🏬",keywords:["ハンドメイド 委託販売"],content:"委託販売：売れた分だけ手数料（相場30〜50%）。レンタルボックス：月額料金でスペースを借りる（相場3000〜10000円/月）。失敗しない選び方：客層・立地・手数料のバランス。"},
-  {slug:"handmade-marche-syuppan",title:"ハンドメイドマルシェ・イベント出店の完全ガイド",description:"準備から当日の接客まで。",category:"minne攻略",date:"2026年4月5日",emoji:"🎪",keywords:["ハンドメイド マルシェ 出店"],content:"出店で得られるもの：1.リアルな顧客の声 2.新規SNSフォロワー（QRコードを用意する）3.その場での売上。当日のコツ：声をかけすぎない。手に取ってもらったら素材のこだわりを一言伝える。"},
-  {slug:"handmade-price-up",title:"ハンドメイド作品の値上げ方法",description:"既存客を失わずに価格を上げる5つのステップ。",category:"価格設定",date:"2026年4月5日",emoji:"💰",keywords:["ハンドメイド 値上げ"],content:"1000名以上の作家を指導してきて、値上げで売上が下がったケースはほとんどなし。5つのステップ：1.値上げ前に既存客に告知 2.理由を正直に伝える 3.旧価格での最後の機会を設ける 4.新価格を設定 5.新価格の価値を発信する。"},
-  {slug:"handmade-seisakuhi-keisan",title:"ハンドメイドの製作費・原価の正しい計算方法",description:"見落としがちな費用を含めた正しい計算方法。",category:"価格設定",date:"2026年4月5日",emoji:"🧮",keywords:["ハンドメイド 原価 計算"],content:"見落としがちな費用：材料費・梱包資材費・道具の減価償却・光熱費（按分）・送料・プラットフォーム手数料・振込手数料。原価に対して最低でも3倍以上の販売価格が理想。"},
-  {slug:"handmade-rebeyu-taisyo",title:"minneのレビュー（評価）を増やす方法",description:"レビューを増やすための具体的な方法。",category:"minne攻略",date:"2026年4月5日",emoji:"⭐",keywords:["minne レビュー 増やす"],content:"レビューがゼロの作品は購入のハードルが上がる。増やす方法：1.購入後のフォローメッセージでお願い 2.梱包にレビューのお願いを書く 3.家族・友人に購入してもらう。"},
-  {slug:"handmade-accessory-ureru",title:"ハンドメイドアクセサリーが売れる作り方",description:"素材・デザイン・価格の正解。",category:"minne攻略",date:"2026年4月6日",emoji:"💍",keywords:["ハンドメイド アクセサリー 売れる"],content:"売れるアクセサリーの3つの条件：1.素材のこだわりが伝わる 2.着用写真がある 3.ターゲットが明確。価格帯：ピアス1500〜5000円・ネックレス2000〜8000円。"},
-  {slug:"handmade-bag-ureru",title:"ハンドメイドバッグ・ポーチが売れる作り方",description:"布小物で稼ぐための戦略。",category:"minne攻略",date:"2026年4月6日",emoji:"👜",keywords:["ハンドメイド バッグ 売れる"],content:"布小物が売れる条件：1.実用性が高い 2.素材の質が伝わる 3.サイズが明記されている。オーダーメイドを受け付けることで単価を上げられる。"},
-  {slug:"handmade-namaenoire",title:"名入れハンドメイド商品が売れる理由",description:"オリジナリティで高単価を実現する。",category:"minne攻略",date:"2026年4月6日",emoji:"✍️",keywords:["ハンドメイド 名入れ"],content:"世界に一つだけのオリジナル商品というプレミア感が価値を高める。対応できる文字・フォントを明記・制作期間を明確に伝える・ギフトラッピング対応を告知する。"},
-  {slug:"handmade-baby-kids-ureru",title:"ベビー・キッズ向けハンドメイド商品が売れる理由",description:"子育て中の作家だからこそ伝えられる価値があります。",category:"minne攻略",date:"2026年4月6日",emoji:"🍼",keywords:["ハンドメイド ベビー 売れる"],content:"我が子のために作ったというエピソードは最大の差別化。素材の安全性を明記・出産祝いに使えることを訴求・サイズ・年齢の目安を明記する。"},
-  {slug:"handmade-winter-items",title:"秋冬に売れるハンドメイド商品と販売戦略",description:"季節に合わせた作品展開は売上を大きく左右します。",category:"minne攻略",date:"2026年4月6日",emoji:"🍂",keywords:["ハンドメイド 秋冬 売れる"],content:"秋冬に売れるカテゴリ：ニット・マフラー・手袋・クリスマスオーナメント・名入れギフト。クリスマス商品は10月から・バレンタイン商品は12月から出品する。"},
-  {slug:"handmade-spring-items",title:"春に売れるハンドメイド商品と販売戦略",description:"入学・入園・母の日を攻略する。",category:"minne攻略",date:"2026年4月6日",emoji:"🌸",keywords:["ハンドメイド 春 売れる"],content:"春に売れるカテゴリ：レッスンバッグ・上履き袋・お弁当袋・コップ袋・名前入りアイテム・母の日ギフト。入学・入園需要は2〜3月にピーク。1月から出品準備を始める。"},
-  {slug:"handmade-wedding-gift",title:"結婚祝い・ブライダルハンドメイドの売り方",description:"ウェディング向け商品の作り方と販売戦略。",category:"minne攻略",date:"2026年4月7日",emoji:"💒",keywords:["ハンドメイド 結婚祝い"],content:"結婚祝いは予算を惜しまないお客様が多い。売れるウェディング向けハンドメイド：ウェルカムボード・リングピロー・席次表・名入れグラス。挙式何週間前までに注文が必要かを明記する。"},
-  {slug:"handmade-mens-ureru",title:"メンズ向けハンドメイド商品の売り方",description:"ブルーオーシャン市場を攻略する。",category:"minne攻略",date:"2026年4月7日",emoji:"👔",keywords:["ハンドメイド メンズ"],content:"minneの商品の大半が女性向け。メンズ向けに特化することで競合が減り検索で上位に表示されやすくなる。売れるメンズハンドメイド：革製品・木製品・メンズアクセサリー・名入れアイテム。"},
-  {slug:"handmade-osusume-tool",title:"ハンドメイド作家におすすめの道具・ツール",description:"売上を上げるための必須アイテム。",category:"価格設定",date:"2026年4月7日",emoji:"🔧",keywords:["ハンドメイド 道具 おすすめ"],content:"写真撮影：Lightroom（無料）・Snapseed・Remove.bg。作業効率化：Canva・LINE公式アカウント・Googleスプレッドシート。梱包資材：OPP袋・リボン・シール・メッセージカード（全て100均で揃う）。"},
-  {slug:"handmade-gaikokujin-touryst",title:"外国人旅行者・インバウンド向けハンドメイド販売",description:"円安の今、海外販売は大きなチャンスです。",category:"Creema攻略",date:"2026年4月7日",emoji:"🌏",keywords:["ハンドメイド インバウンド"],content:"外国人旅行者に売れるハンドメイド：和柄・桜・富士山モチーフのアクセサリー・伝統工芸・和紙・藍染・刺繍。EtsyはDeepLを活用すれば英語での商品説明も作れる。"},
-  {slug:"handmade-seo-google",title:"ハンドメイドブログのSEO対策",description:"Googleで上位表示されるための記事の書き方。",category:"SNS集客",date:"2026年4月7日",emoji:"🔎",keywords:["ハンドメイド ブログ SEO"],content:"ブログは長期的に集客に強い。SNSの投稿は流れてしまうがブログはGoogleに評価されると継続的に読者が来る。1.検索ボリュームのあるキーワードで記事を書く 2.タイトルにキーワード 3.2000字以上 4.定期的に更新。"},
-  {slug:"handmade-instagram-reel",title:"ハンドメイド作家のInstagramリール攻略",description:"フォロワーを爆速で増やす方法。",category:"SNS集客",date:"2026年4月7日",emoji:"🎬",keywords:["ハンドメイド Instagram リール"],content:"リールはフォロワー以外にも表示されるため新規フォロワー獲得に最も効果的。作るべきリール：1.制作タイムラプス 2.ビフォーアフター 3.梱包の様子 4.材料紹介。最初の3秒が全て。"},
-  {slug:"handmade-hashtag",title:"ハンドメイド作家のInstagramハッシュタグ攻略",description:"フォロワーに届くタグの選び方。",category:"SNS集客",date:"2026年4月8日",emoji:"#️⃣",keywords:["ハンドメイド ハッシュタグ"],content:"1投稿あたり5〜15個が理想。大きいタグ（10万件以上）：ハンドメイド。中程度（1〜10万件）：ハンドメイドアクセサリー。小さいタグ（1000〜1万件）：自分のカテゴリに特化。"},
-  {slug:"handmade-toriitreta",title:"ハンドメイド販売で取り入れたいトレンド予測2026",description:"売れるデザインの先読み方法。",category:"ブランディング",date:"2026年4月8日",emoji:"📈",keywords:["ハンドメイド トレンド 2026"],content:"トレンドのリサーチ方法：1.Pinterestで調べる 2.海外のEtsyで売れている商品を調べる（日本の半年〜1年後のトレンドになることが多い）3.ファッション業界のトレンドカラーを参考にする。"},
-  {slug:"handmade-customer-service",title:"ハンドメイド作家のカスタマー対応",description:"クレームをリピーターに変える方法。",category:"ブランディング",date:"2026年4月8日",emoji:"💬",keywords:["ハンドメイド お客様対応"],content:"クレームをリピーターに変える：1.まず謝罪（言い訳をしない）2.原因を正直に伝える 3.解決策を提案する 4.再発防止策を伝える。誠実な対応をしたお客様は最も熱心なリピーターになることが多い。"},
-  {slug:"handmade-jigyoka-houjinka",title:"ハンドメイド作家の事業化・法人化を考えるタイミング",description:"個人事業主から次のステップ。",category:"収入・税金",date:"2026年4月8日",emoji:"🏢",keywords:["ハンドメイド 事業化"],content:"月収が安定して10万円を超えたら開業届を出すことを検討。青色申告で最大65万円の控除。法人化は年収1000万円を超えてきたら。個別の税務・法律の相談は専門家にご相談ください。"},
-  {slug:"handmade-keiro-jidai",title:"ハンドメイド作家のキャリア設計",description:"10年後も続けるための戦略。",category:"ブランディング",date:"2026年4月8日",emoji:"🌱",keywords:["ハンドメイド 長く続ける"],content:"10年続けているハンドメイド作家の共通点：1.依存している販売チャネルがない（複数持つ）2.作品販売以外の収益源を持っている 3.コミュニティを持っている。どれか一つが崩れても大丈夫な設計を早めに作る。"},
-  {slug:"handmade-jibun-brand",title:"自分ブランドを作るためのハンドメイド作家の自己分析",description:"あなただけのブランドを作るための自己分析方法。",category:"ブランディング",date:"2026年4月9日",emoji:"🪞",keywords:["ハンドメイド 自己分析"],content:"自己分析の3つの質問：1.なぜハンドメイドを始めたのか（原点）2.どんな作品を作るとき一番楽しいのか（強み）3.どんなお客様に喜んでもらいたいのか（ターゲット）。この3つの答えが交わるところにあなただけのブランドがある。"},
-  {slug:"handmade-nemuri-jikan-money",title:"ハンドメイド作家が寝ている間に稼ぐ仕組みの作り方",description:"労働に依存しない収益の仕組み。",category:"収入・税金",date:"2026年4月9日",emoji:"😴",keywords:["ハンドメイド 自動化"],content:"寝ている間に稼ぐ仕組み：1.動画コンテンツ販売（一度作れば繰り返し収益）2.PDF型レシピ・型紙の販売 3.minneでの自動販売（在庫を積み上げておく）4.アフィリエイト（ハンドメイド道具・素材の紹介）。"},
-  {slug:"handmade-sale-timing",title:"ハンドメイドセールの効果的なやり方",description:"値下げなしで在庫を売り切る方法。",category:"価格設定",date:"2026年4月9日",emoji:"🏷️",keywords:["ハンドメイド セール"],content:"値下げは最後の手段。値下げなしで在庫を売り切る5つの方法：1.セット販売 2.限定数・期間限定の告知 3.SNSでの再訴求 4.プレゼント需要に訴求 5.LINEやメルマガで限定案内。"},
-  {slug:"handmade-story-telling",title:"ハンドメイド作家のストーリーテリング",description:"物語で売上を上げる方法。",category:"ブランディング",date:"2026年4月9日",emoji:"📖",keywords:["ハンドメイド ストーリー"],content:"同じ価格・品質の作品が並んでいたとき最後に選ばれるのはストーリーがある方。過去（なぜ始めたのか）→現在（どんな思いで作っているか）→未来（この作品を通じてどんな世界を作りたいか）。"},
-  {slug:"handmade-osusume-hanbaisite",title:"ハンドメイド販売サイト比較2026",description:"minne・Creema・iichi・BASE・Etsyを徹底比較。",category:"Creema攻略",date:"2026年4月9日",emoji:"🏪",keywords:["ハンドメイド 販売サイト 比較"],content:"minne：手数料10.56%・集客力高い・初心者向け。Creema：手数料22%・高単価向け。iichi：手数料20%・工芸向け。BASE：手数料6.6%+決済手数料・自社ショップ。Etsy：手数料6.5%・海外販売向け。最初はminne・軌道に乗ったらCreemaとBASEを追加するのが王道。"},
-  {slug:"handmade-syokugyou-sakka",title:"ハンドメイド作家を職業にするために必要な5つの覚悟",description:"専業作家になるために必要な心構え。",category:"収入・税金",date:"2026年4月9日",emoji:"💪",keywords:["ハンドメイド 職業"],content:"1.収入が不安定な時期があることを受け入れる 2.作ることと売ることは別のスキルだと理解する 3.継続的に学び続ける 4.コミュニティを持つ 5.長期視点を持つ（1〜2年は投資期間と考える）。"},
-  {slug:"minne-shashin-utsuri",title:"minneの商品写真を劇的によくする方法",description:"スマホだけで売れる写真が撮れるライティングとアングルの秘訣。",category:"minne攻略",date:"2026年4月10日",emoji:"📷",keywords:["minne 写真 撮り方"],content:"自然光を最大活用。白い紙や布を反射板代わりに。真上・斜め45度・真横の3アングルは必須。背景は無地かシンプルな木目。加工はLightroomで明るさ+30、コントラスト+10程度。"},
-  {slug:"handmade-creema-profile",title:"Creemaプロフィールで信頼を勝ち取る書き方",description:"購入前に必ず読まれるプロフィールで差をつける方法。",category:"Creema攻略",date:"2026年4月10日",emoji:"📝",keywords:["Creema プロフィール"],content:"作家歴・制作への想い・素材へのこだわりを300文字以内にまとめる。顔写真かアトリエ写真を必ず掲載。受賞歴・展示歴があれば必ず記載。更新日を定期的に変えると検索に有利。"},
-  {slug:"handmade-tanpin-takaku",title:"単価を上げても売れるハンドメイド商品の条件",description:"値上げしたら売れた作家が共通してやっていること。",category:"価格設定",date:"2026年4月10日",emoji:"💎",keywords:["ハンドメイド 単価 上げる"],content:"ストーリーで価値を伝える。限定感を演出する。素材のグレードを上げる。ブランド名を作る。梱包に投資する。3000円以下のエントリー品と15000円以上のハイエンドの2段構成が売れやすい。"},
-  {slug:"handmade-minne-gazo-sumai",title:"minneで画像を目立たせるサムネイル戦略",description:"検索一覧でクリックされるサムネの作り方。",category:"minne攻略",date:"2026年4月10日",emoji:"🖼️",keywords:["minne サムネイル"],content:"正方形1:1にトリミング。商品を画面の70%以上占める構図。明るい背景か黒背景で差別化。文字入れは商品名1行のみ。A/Bテストで2種類のサムネを試してクリック率を比較する。"},
-  {slug:"handmade-fukugyou-zeikin",title:"副業ハンドメイドの税金早わかりガイド",description:"会社員が副業でハンドメイドをするときの税務知識。",category:"収入・税金",date:"2026年4月10日",emoji:"🧾",keywords:["ハンドメイド 副業 税金"],content:"副業所得=売上-経費（材料費・梱包費・送料・ツール代・通信費の按分）。20万円超で確定申告必須。住民税は会社員でも自分で納付（普通徴収）を選ぶと会社にバレにくい。経費の領収書は7年保管。"},
-  {slug:"handmade-creema-summer",title:"Creemaの夏商戦完全攻略",description:"7〜8月に売上を最大化する季節戦略。",category:"Creema攻略",date:"2026年4月10日",emoji:"☀️",keywords:["Creema 夏 売れる"],content:"5月末から夏素材（レジン・麻・ガラス風）の商品を登録開始。浴衣・海・海外旅行をキーワードに取り込む。Creemaの夏のプロモーション期間（6月下旬〜）に合わせてクーポン設定。ギフト需要として父の日・お中元を狙う。"},
-  {slug:"handmade-minne-coupon",title:"minneクーポンの効果的な使い方",description:"クーポン機能でリピーターを増やす戦術。",category:"minne攻略",date:"2026年4月10日",emoji:"🎟️",keywords:["minne クーポン"],content:"購入後24時間以内に送る「次回10%オフ」クーポンがリピート率を上げる。誕生日クーポンはファン化に効果的。お気に入り登録者限定クーポンで購入を後押し。割引率は10〜15%が最も効果的（20%以上は値崩れリスク）。"},
-  {slug:"handmade-youtube-katsuyou",title:"ハンドメイド作家がYouTubeで集客する方法",description:"制作動画で長期的なファンを作る戦略。",category:"SNS集客",date:"2026年4月10日",emoji:"▶️",keywords:["ハンドメイド YouTube 集客"],content:"制作過程動画はハンドメイド系で最も再生される。タイトルに「作り方」「DIY」「handmade」を含める。5〜15分が最適尺。チャンネル登録1000人・再生4000時間で収益化。概要欄にminnne・CreemaのURLを必ず記載。"},
-  {slug:"handmade-tiktok-katsuyou",title:"TikTokでハンドメイド作品を爆発的に広める方法",description:"バズった作家が実践するTikTok活用術。",category:"SNS集客",date:"2026年4月10日",emoji:"🎵",keywords:["ハンドメイド TikTok"],content:"30秒〜1分の制作タイムラプスが最も拡散される。トレンド音楽に合わせる。#handmade #ハンドメイド #作り方 のハッシュタグは必須。毎日投稿より週3〜4回の高品質動画が効果的。フォロワー0からでもバズる可能性があるのがTikTokの特徴。"},
-  {slug:"handmade-pinterest-katsuyou",title:"Pinterestでハンドメイド作品を海外に届ける方法",description:"Pinterest経由でEtsy売上を伸ばした事例。",category:"SNS集客",date:"2026年4月10日",emoji:"📌",keywords:["ハンドメイド Pinterest"],content:"Pinterestは画像検索エンジン。ピンのタイトルと説明文に英語キーワードを含める。縦長2:3の画像が最も表示される。ボードをカテゴリ別に整理。Etsyと連携すると自動ピン投稿が可能。月間ビューが100万超えの作家もいる。"},
-  {slug:"handmade-fuyu-ureru",title:"冬のハンドメイド売れ筋アイテム完全ガイド",description:"11月〜2月に爆売れする商品カテゴリと仕込み時期。",category:"minne攻略",date:"2026年4月10日",emoji:"❄️",keywords:["ハンドメイド 冬 売れる"],content:"ウール・ニット・ファー素材が売れる。クリスマスギフト需要は11月から急増。マフラー・ニット帽・手袋は10月から登録開始。バレンタイン関連は12月中旬から仕込む。防寒グッズは実用性をアピールすると刺さる。"},
-  {slug:"handmade-aki-ureru",title:"秋のハンドメイド売れ筋と仕込み戦略",description:"9〜10月の需要を先読みした商品展開のコツ。",category:"minne攻略",date:"2026年4月10日",emoji:"🍂",keywords:["ハンドメイド 秋 売れる"],content:"秋色（テラコッタ・バーガンディ・オリーブ）の作品を7月末から制作開始。運動会・文化祭・七五三・ハロウィンをキーワードに。レザー・コルク・ドライフラワーが季節感を出しやすい。"},
-  {slug:"handmade-natsu-ureru",title:"夏のハンドメイド売れ筋と仕込み戦略",description:"7〜8月の需要を先読みした商品展開のコツ。",category:"minne攻略",date:"2026年4月10日",emoji:"🌊",keywords:["ハンドメイド 夏 売れる"],content:"レジン・ビーズ・シェル素材が夏は特に売れる。浴衣に合わせたアクセサリーは6月から需要増。海・夏祭り・花火大会をキーワードに組み込む。涼しげな色（水色・ミント・白）で商品写真を統一。"},
-  {slug:"handmade-zairyo-doko",title:"ハンドメイド材料の仕入れ先完全ガイド",description:"コストを下げて品質を上げる材料調達術。",category:"価格設定",date:"2026年4月10日",emoji:"🏭",keywords:["ハンドメイド 材料 仕入れ"],content:"国内：貴和製作所・パンドラハウス・ユザワヤ・東急ハンズ。ネット：AliExpress（リードタイム注意）・楽天市場・Amazon。卸サイト：Dearisime・スワロフスキー正規代理店。ロット購入でコスト30〜50%削減可能。"},
-  {slug:"handmade-renzoku-uriage",title:"月10万円を継続する売上の仕組み作り",description:"単発の売れ行きでなく安定収益を得るための構造。",category:"収入・税金",date:"2026年4月10日",emoji:"📈",keywords:["ハンドメイド 月10万"],content:"リピーター率30%以上を目指す。メルマガかLINE公式でリストを持つ。新作を月4本以上登録する。季節商品を年間スケジュールで管理する。複数プラットフォームで露出を増やす。"},
-  {slug:"handmade-minne-osusume",title:"minneのおすすめ掲載に選ばれる方法",description:"トップページ・特集に掲載されるための条件。",category:"minne攻略",date:"2026年4月10日",emoji:"⭐",keywords:["minne おすすめ 掲載"],content:"販売実績（購入数・評価数）が多いほど有利。写真のクオリティが最重要。季節・トレンドに合った商品は特集に選ばれやすい。プロフィールの充実度も評価される。定期的な新作追加でアクティブ作家と認識される。"},
-  {slug:"handmade-creema-award",title:"Creema CRAFTS AWARDで注目を集める戦略",description:"コンテスト入賞で作家としての信頼を一気に高める方法。",category:"Creema攻略",date:"2026年4月10日",emoji:"🏆",keywords:["Creema アワード"],content:"Creema CRAFTS AWARDは毎年開催。入賞・ノミネートでメディア露出が大幅増。応募作品は「ブランドの世界観」「技術力」「独自性」で審査。入賞作家の売上は平均3〜5倍に。過去受賞作をリサーチして審査員の好みを把握。"},
-  {slug:"handmade-negai-kakikata",title:"売れるハンドメイド商品説明文の書き方テンプレ",description:"読むだけで買いたくなる説明文の構造を公開。",category:"minne攻略",date:"2026年4月10日",emoji:"📋",keywords:["ハンドメイド 商品説明 書き方"],content:"①商品の特徴（素材・サイズ・重さ）②どんな場面で使えるか③作り手のこだわり④お手入れ方法⑤注意事項の順番で書く。最初の2文で購入意欲を掴む。箇条書きと段落を混在させると読みやすい。"},
-  {slug:"handmade-set-hanbai",title:"セット販売でAOVを上げる方法",description:"1回の注文金額を増やすセット販売の組み方。",category:"価格設定",date:"2026年4月10日",emoji:"🎁",keywords:["ハンドメイド セット販売"],content:"AOV（平均注文額）を上げるのが売上増の最短ルート。ピアス+ネックレスのセット、同色系2点セットなど。セット価格は単品合計の10〜15%引きが最も購入されやすい。ギフト包装込みにすると贈り物需要を取り込める。"},
-  {slug:"handmade-store-top",title:"minneショップトップページの整え方",description:"初めて来た人が即購入したくなるショップ設計。",category:"minne攻略",date:"2026年4月10日",emoji:"🏠",keywords:["minne ショップトップ"],content:"バナー画像はブランドの世界観を1枚で伝える。プロフィール文は3行以内で完結させる。商品は売れ筋順に並べる。カテゴリを整理して迷わせない。お知らせ機能を活用して最新情報を届ける。"},
-  {slug:"handmade-uriage-bunseki",title:"ハンドメイド売上分析の基本と改善サイクル",description:"数字を読んで売れる商品を量産する方法。",category:"価格設定",date:"2026年4月10日",emoji:"📊",keywords:["ハンドメイド 売上分析"],content:"見るべき指標：PV数・クリック率・購入率・平均単価・リピート率。PVが多いのに購入されない→写真か価格が原因。PVが少ない→タイトルかカテゴリが原因。週次でデータを記録してA/Bテストを繰り返す。"},
-  {slug:"handmade-iphone-satsuei",title:"iPhoneだけでハンドメイド作品を撮影するコツ",description:"一眼不要。スマホカメラで売れる写真を撮る全技術。",category:"minne攻略",date:"2026年4月10日",emoji:"📱",keywords:["ハンドメイド スマホ 撮影"],content:"ポートレートモードを使う。グリッド線を表示して水平を保つ。露出をタップで調整。フォーカスポイントを商品の一番見せたいパーツに合わせる。三脚代わりに本や消しゴムを使う。撮影は午前10時〜14時の自然光が最適。"},
-  {slug:"handmade-message-template",title:"購入後のメッセージテンプレート集",description:"リピーターを育てる購入後コミュニケーション術。",category:"minne攻略",date:"2026年4月10日",emoji:"💌",keywords:["minne メッセージ 購入後"],content:"①購入お礼②発送通知③到着確認の3段階が理想。お礼メッセージには「作品への想い」を一言添える。発送通知には追跡番号を記載。到着確認メッセージは届いてから3日後が自然。レビューのお願いはさりげなく最後に添える。"},
-  {slug:"handmade-cancel-taisyo",title:"キャンセル・クレームを未然に防ぐ商品ページの作り方",description:"トラブルゼロを目指す事前説明の徹底術。",category:"minne攻略",date:"2026年4月10日",emoji:"⚠️",keywords:["minne キャンセル クレーム"],content:"サイズ・重さ・素材を必ず数値で記載。「手作りのため多少の個体差があります」を必ず明記。色味はモニターによって異なる旨を記載。発送予定日は余裕を持って設定。返品・交換ポリシーを明確に。"},
-  {slug:"handmade-fanbase-tsukurikata",title:"ハンドメイド作家のファン基盤の作り方",description:"1000人の真のファンが安定収益を生む理由。",category:"ブランディング",date:"2026年4月10日",emoji:"❤️",keywords:["ハンドメイド ファン 作り方"],content:"「1000人の真のファン理論」をハンドメイドに応用。1人が年間1万円購入すれば年収1000万円。SNSで人間性を発信する。制作の裏側を見せる。顧客の名前を覚えてパーソナライズされたメッセージを送る。"},
-  {slug:"handmade-brand-name",title:"売れるハンドメイドブランド名の付け方",description:"覚えてもらえる・検索されるブランド名の法則。",category:"ブランディング",date:"2026年4月10日",emoji:"✨",keywords:["ハンドメイド ブランド名"],content:"3〜6文字が最も記憶に残りやすい。読み方が一意に決まるものが検索されやすい。自分の名前・素材・世界観を組み合わせる。英語か日本語かは一貫して使う。商標登録を視野に入れた上で決める。"},
-  {slug:"handmade-line-official",title:"LINE公式アカウントでリピーターを量産する方法",description:"購入者を長期顧客にするLINE活用術。",category:"SNS集客",date:"2026年4月10日",emoji:"💬",keywords:["ハンドメイド LINE公式"],content:"購入後にLINE公式への誘導カードを梱包に同封。月2回の新作情報・制作裏話・限定クーポン配信。友だち数100人でリッチメッセージ機能解放。セグメント配信で好みに合わせたメッセージを届ける。"},
-  {slug:"handmade-gift-wrapping",title:"ハンドメイド梱包でリピーターを増やす方法",description:"開封体験がブランドを作る梱包デザインの考え方。",category:"ブランディング",date:"2026年4月10日",emoji:"🎀",keywords:["ハンドメイド 梱包 ギフト"],content:"梱包材にブランドカラーを使う。ありがとうカードは必ず同封。シール・リボン・組み紙など3点セットが理想。梱包費は原価の5〜8%が目安。インスタ映えする梱包は「開封動画」でSNS拡散される。"},
-  {slug:"handmade-tane-sagashi",title:"売れるハンドメイド作品のアイデアの見つけ方",description:"何を作るかで迷う作家のためのネタ探し術。",category:"ブランディング",date:"2026年4月10日",emoji:"💡",keywords:["ハンドメイド アイデア 探し方"],content:"minneとCreemaのランキングを毎週チェック。Pinterestでトレンドカラーを調べる。Googleトレンドで季節需要を先読み。自分が欲しいものを作る（最強の差別化）。顧客のレビュー・要望から次作のヒントを得る。"},
-  {slug:"handmade-oshi-branding",title:"「推し活」需要を取り込むハンドメイド戦略",description:"オタク・推し活市場で売れるための商品設計。",category:"ブランディング",date:"2026年4月10日",emoji:"💜",keywords:["ハンドメイド 推し活"],content:"推し活市場は年間6000億円超。推しカラーのアクセ・痛バッグ・缶バッジ台紙が特需。「オーダーメイド対応」を明記するだけで問い合わせが急増。TwitterとTikTokでの拡散力が高い。公式グッズとの差別化として「世界に一つ」を強調。"},
-  {slug:"handmade-etsy-hajimekata",title:"Etsyの始め方と日本から海外販売する方法",description:"Etsyで月5万円以上稼いだ作家の参入ガイド。",category:"Creema攻略",date:"2026年4月10日",emoji:"🌏",keywords:["Etsy 始め方 日本"],content:"アカウント登録は無料。出品手数料0.2USD/点+販売手数料6.5%。商品説明は英語で書く（DeepLで可）。タイトルに英語キーワードを詰め込む。国際郵便の送料計算は必須。PayPalかPayoneerで受け取り。"},
-  {slug:"handmade-base-hajimekata",title:"BASE×ハンドメイドで自社ネットショップを開く方法",description:"プラットフォームに依存しない自前の販売基盤の作り方。",category:"Creema攻略",date:"2026年4月10日",emoji:"🏬",keywords:["BASE ハンドメイド ネットショップ"],content:"BASEは初期費用0円でショップ開設可能。手数料はBASE6.6%+決済手数料3.6%。独自ドメイン設定でブランド力UP。Instagram・TikTokショッピング機能と連携できる。minne・Creemaと並行運営してリスク分散が王道。"},
-  {slug:"handmade-mail-hiyou",title:"ハンドメイド発送コスト削減の完全ガイド",description:"送料を下げて利益率を上げる梱包・発送術。",category:"価格設定",date:"2026年4月10日",emoji:"📦",keywords:["ハンドメイド 発送 送料"],content:"ネコポス（1個185円）とゆうパケット（230円〜）を使い分ける。厚さ3cm・重さ1kg以内ならネコポスが最安。匿名配送を使うと個人情報を守れる。梱包材はAmazonか百均で大量購入してコスト削減。売上月5万円超えたら後払い契約（ヤマト法人）を検討。"},
-  {slug:"handmade-sabetsuwa",title:"ハンドメイドで差別化する7つの戦略",description:"価格競争に巻き込まれないポジショニングの作り方。",category:"ブランディング",date:"2026年4月10日",emoji:"🎯",keywords:["ハンドメイド 差別化"],content:"1.素材の希少性 2.技術の特殊性 3.世界観の一貫性 4.ストーリー性 5.カスタマイズ対応 6.ニッチ市場の独占 7.コミュニティ形成。価格で戦わず価値で戦う作家だけが生き残る。"},
-  {slug:"handmade-jibun-shashin",title:"作家本人が写真に映ることでブランドを作る方法",description:"顔出しなしでもできる「人間性」の見せ方。",category:"ブランディング",date:"2026年4月10日",emoji:"🤳",keywords:["ハンドメイド 作家 顔出し"],content:"顔出しは必須ではない。手元・アトリエ・材料・制作風景を見せるだけでも人間性が伝わる。「作り手が見える」作品は購買率が約1.4倍。Instagramのストーリーズで日常を見せると親近感UP。"},
-  {slug:"handmade-kuchi-komi-kakeru",title:"レビュー・口コミを増やすための仕組み",description:"自然に★5レビューが集まる購入後フォローの方法。",category:"minne攻略",date:"2026年4月10日",emoji:"⭐",keywords:["minne レビュー 増やす"],content:"同梱カードに「レビューをいただけると励みになります」を一言添える。レビュー依頼メッセージは到着から5〜7日後が最適タイミング。レビューに返信することで次の購入者への信頼につながる。高評価レビューはSNSで引用してSocial Proofに活用する。"},
-  {slug:"handmade-nemuri-jikan-income",title:"寝ている間に売上が立つ仕組みの作り方",description:"時間を切り離した収益化の仕組み設計。",category:"収入・税金",date:"2026年4月10日",emoji:"😴",keywords:["ハンドメイド 不労所得"],content:"在庫を持つことが時間から収益を切り離す第一歩。型紙・レシピ・動画講座のデジタル販売でストック収益化。メルマガ・LINE公式で顧客リストを持つ。minneの「再販通知」機能でファンが自動購入する仕組みを作る。"},
-  {slug:"handmade-order-ryohkin",title:"オーダーメイドの受け方と料金設定",description:"オーダーメイドで単価5倍にした作家の手法。",category:"価格設定",date:"2026年4月10日",emoji:"🎨",keywords:["ハンドメイド オーダーメイド 料金"],content:"オーダー料金=通常価格×1.5〜2倍が目安。ヒアリングシートで要望を明確化。制作期間は余裕を持って設定（+30%）。イメージ画像を送ってもらいイメージ齟齬を防ぐ。「完全オーダー」と「セミオーダー」を使い分けると対応しやすい。"},
-  {slug:"handmade-creator-economy",title:"クリエイターエコノミーでハンドメイド収入を多様化する",description:"販売だけに頼らない収益の柱を増やす戦略。",category:"収入・税金",date:"2026年4月10日",emoji:"🌐",keywords:["ハンドメイド クリエイターエコノミー"],content:"制作販売+教室+デジタル販売+コンテンツ収益の4本柱が安定する。Udemyで動画講座販売。noteで有料記事。fanboxで月額サポーター募集。自分の知識・経験がそのまま商品になる。"}
-]
-export const getArticleBySlug = (slug:string) => articles.find(a=>a.slug===slug)
-export const getArticlesByCategory = (cat:string) => {
-  const m:Record<string,string> = {pricing:"価格設定",minne:"minne攻略",creema:"Creema攻略",sns:"SNS集客",branding:"ブランディング",income:"収入・税金"}
-  return m[cat] ? articles.filter(a=>a.category===m[cat]) : articles
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+
+const articlesDir = path.join(process.cwd(), 'content', 'articles')
+
+export type Article = {
+  slug: string
+  title: string
+  description: string
+  category: string
+  date: string
+  emoji: string
+  keywords: string[]
+}
+
+function loadArticles(): Article[] {
+  if (!fs.existsSync(articlesDir)) return []
+
+  const files = fs.readdirSync(articlesDir)
+    .filter(f => f.endsWith('.md'))
+    .sort()
+
+  const result: Article[] = []
+
+  for (const file of files) {
+    const slug = file.replace(/\.md$/, '')
+    const raw = fs.readFileSync(path.join(articlesDir, file), 'utf-8')
+    const { data } = matter(raw)
+
+    result.push({
+      slug: (data.slug as string) || slug,
+      title: (data.title as string) || slug,
+      description: (data.description as string) || '',
+      category: (data.category as string) || 'minne攻略',
+      date: (data.date as string) || '2026年4月1日',
+      emoji: (data.emoji as string) || '📝',
+      keywords: (data.keywords as string[]) || [],
+    })
+  }
+
+  // Sort by date desc
+  result.sort((a, b) => {
+    const parseDate = (s: string) => {
+      const m = s.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/)
+      return m ? new Date(+m[1], +m[2] - 1, +m[3]).getTime() : 0
+    }
+    return parseDate(b.date) - parseDate(a.date)
+  })
+
+  return result
+}
+
+export const articles = loadArticles()
+
+export const getArticleBySlug = (slug: string) =>
+  articles.find(a => a.slug === slug)
+
+export const getArticlesByCategory = (cat: string) =>
+  articles.filter(a => a.category === cat)
+
+export const getRelatedArticles = (current: Article, limit = 3): Article[] => {
+  const scored = articles
+    .filter(a => a.slug !== current.slug)
+    .map(a => {
+      const overlap = a.keywords.filter(k => current.keywords.includes(k)).length
+      const sameCategory = a.category === current.category ? 2 : 0
+      return { article: a, score: overlap + sameCategory }
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+
+  return scored.slice(0, limit).map(({ article }) => article)
 }
