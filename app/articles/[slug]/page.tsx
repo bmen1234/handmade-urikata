@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getArticleBySlug, getRelatedArticles, articles, type Article } from "@/lib/articles"
+import { getArticleBySlug, getRelatedArticles, articles } from "@/lib/articles"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { marked } from "marked"
 import ConsultingCTA from "@/components/ConsultingCTA"
+import { autoInternalLink } from "@/lib/utils"
 
 export async function generateStaticParams() {
   return articles.map(a => ({ slug: a.slug }))
@@ -27,43 +28,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       url: `https://urikata.jp/articles/${article.slug}`,
     },
   }
-}
-
-// ── 内部リンク自動挿入 ──────────────────────────────────────────
-function escapeRegex(s: string) {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-}
-
-function autoInternalLink(html: string, allArticles: Article[], currentSlug: string): string {
-  // タイトルが長い順（長いほど精度が高い）にソート、短すぎる(6文字未満)は除外
-  const targets = allArticles
-    .filter(a => a.slug !== currentSlug && a.title.length >= 6)
-    .sort((a, b) => b.title.length - a.title.length)
-
-  let result = html
-  const linked = new Set<string>() // 1記事につき1リンクのみ
-
-  for (const target of targets) {
-    if (linked.has(target.slug)) continue
-
-    const pattern = escapeRegex(target.title)
-    // テキストノード内のみマッチ（タグ属性・既存リンク内は除外）
-    const regex = new RegExp(`(?<=>|^|[^a-zA-Z])(${pattern})(?=[^a-zA-Z]|<|$)`, 'g')
-
-    let matched = false
-    result = result.replace(regex, (full, captured) => {
-      if (matched) return full
-      // <a タグの中ではリンクしない（beforeに "<a" があってまだ閉じていない場合はスキップ）
-      matched = true
-      linked.add(target.slug)
-      return full.replace(
-        captured,
-        `<a href="/articles/${target.slug}" class="internal-link">${captured}</a>`
-      )
-    })
-  }
-
-  return result
 }
 
 // ── Markdownコンテンツ取得 ─────────────────────────────────────
